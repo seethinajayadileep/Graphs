@@ -1,0 +1,58 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+  int n,m;
+  cout<<"enter nodes and edges";
+  cin>>n>>m;
+  vector< pair <int,int> > a[n+1];
+ for(int i=0;i<m;i++)
+   {int u,v,k;
+     cout<<"enter edges input and edge weight";
+       cin>>u>>v>>k;
+    a[u].push_back(make_pair(v,k ));
+     a[v].push_back(make_pair(u,k ));
+   
+     
+   }
+  for(int i=0;i<n+1;i++)
+    {
+      for(auto j=0;j<a[i].size();j++)
+        {
+          cout<<"{"<<a[i][j].first<<" "<<a[i][j].second<< "}"<<" ";
+        
+        }
+      cout<<endl;
+    }
+  return 0;
+  }
+/*
+output:-
+ enter nodes and edges5
+6
+enter edges input and edge weight1
+2
+1
+enter edges input and edge weight1
+3
+4
+enter edges input and edge weight4
+3
+3
+enter edges input and edge weight2
+4
+2
+enter edges input and edge weight2
+5
+5
+enter edges input and edge weight4
+5
+6
+
+{2 1} {3 4} 
+{1 1} {4 2} {5 5} 
+{1 4} {4 3} 
+{3 3} {2 2} {5 6} 
+{2 5} {4 6} 
+*/
